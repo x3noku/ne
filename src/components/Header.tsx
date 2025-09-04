@@ -3,6 +3,8 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Heart, ShoppingBag, User } from "lucide-react";
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -10,11 +12,13 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-bold text-lg">
-              NE
-            </div>
-          </div>
+          <Image
+            src={Logo.src}
+            width={Logo.width}
+            height={Logo.height}
+            className={"size-16 object-contain"}
+            alt={""}
+          />
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
