@@ -7,6 +7,22 @@ export interface Product {
   image: string;
   isOnSale?: boolean;
   badge?: string;
+  description?: string;
+  images?: string[];
+  brand?: string;
+  category?: string;
+  sizes?: string[];
+  colors?: string[];
+  specifications?: {
+    [key: string]: string;
+  };
+  inStock?: boolean;
+  rating?: number;
+  reviewsCount?: number;
+}
+
+export function getProductById(id: string): Product | undefined {
+  return products.find(product => product.id === id);
 }
 
 export const products: Product[] = [
@@ -16,6 +32,25 @@ export const products: Product[] = [
     price: 3990,
     currency: "AED",
     image: "https://ext.same-assets.com/150513346/4244703012.jpeg",
+    description: "The Travis Scott x Air Jordan 1 Retro Low OG SP features a unique velvet brown upper with premium materials and signature details. This collaboration brings together the iconic Jordan 1 silhouette with Travis Scott's distinctive style.",
+    brand: "Nike",
+    category: "Sneakers",
+    sizes: ["US 7", "US 8", "US 9", "US 10", "US 11", "US 12"],
+    colors: ["Velvet Brown"],
+    specifications: {
+      "Upper Material": "Premium Velvet",
+      "Sole": "Rubber",
+      "Closure": "Lace-up",
+      "Style": "Low-top",
+      "Collection": "Travis Scott x Jordan"
+    },
+    inStock: true,
+    rating: 4.8,
+    reviewsCount: 124,
+    images: [
+      "https://ext.same-assets.com/150513346/4244703012.jpeg",
+      "https://ext.same-assets.com/150513346/4244703012.jpeg"
+    ]
   },
   {
     id: "2",

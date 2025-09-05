@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search, Heart, ShoppingBag, User } from "lucide-react";
 import Logo from "@/assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -12,13 +13,15 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Image
-            src={Logo.src}
-            width={Logo.width}
-            height={Logo.height}
-            className={"size-16 object-contain"}
-            alt={""}
-          />
+          <Link href="/">
+            <Image
+              src={Logo.src}
+              width={Logo.width}
+              height={Logo.height}
+              className={"size-16 object-contain cursor-pointer"}
+              alt={"NE Store"}
+            />
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -29,7 +32,7 @@ export default function Header() {
               SALE
             </a>
             <a
-              href="#"
+              href="/catalog"
               className="text-sm font-medium hover:text-gray-600 transition-colors"
             >
               SHOES
