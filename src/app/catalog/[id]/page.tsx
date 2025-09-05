@@ -25,7 +25,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 export async function generateStaticParams() {
   const { products } = await import("@/lib/products");
-  
+
   return products.map((product) => ({
     id: product.id,
   }));

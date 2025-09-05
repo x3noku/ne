@@ -26,7 +26,9 @@ export function ProductInfo({
   onBuyNow,
 }: ProductInfoProps) {
   const discountPercentage = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    ? Math.round(
+        ((product.originalPrice - product.price) / product.originalPrice) * 100,
+      )
     : 0;
 
   return (
@@ -88,10 +90,11 @@ export function ProductInfo({
             </span>
           )}
         </div>
-        
+
         {product.isOnSale && (
           <p className="text-sm text-green-600 font-medium">
-            Экономия {product.currency} {(product.originalPrice! - product.price).toLocaleString()}
+            Экономия {product.currency}{" "}
+            {(product.originalPrice! - product.price).toLocaleString()}
           </p>
         )}
       </div>
@@ -148,8 +151,7 @@ export function ProductInfo({
       <div className="space-y-2">
         {product.inStock ? (
           <p className="text-green-600 font-medium flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            В наличии
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>В наличии
           </p>
         ) : (
           <p className="text-red-600 font-medium">Нет в наличии</p>
@@ -163,7 +165,9 @@ export function ProductInfo({
             size="lg"
             className="flex-1"
             onClick={onAddToCart}
-            disabled={!product.inStock || (!selectedSize && product.sizes?.length)}
+            disabled={
+              !product.inStock || (!selectedSize && product.sizes?.length)
+            }
           >
             Добавить в корзину
           </Button>
@@ -172,7 +176,9 @@ export function ProductInfo({
             variant="outline"
             className="flex-1"
             onClick={onBuyNow}
-            disabled={!product.inStock || (!selectedSize && product.sizes?.length)}
+            disabled={
+              !product.inStock || (!selectedSize && product.sizes?.length)
+            }
           >
             Купить сейчас
           </Button>

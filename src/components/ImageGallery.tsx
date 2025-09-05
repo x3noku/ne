@@ -38,10 +38,10 @@ export function ImageGallery({ images, productName }: ImageGalleryProps) {
           onClick={() => setIsZoomed(!isZoomed)}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        
+
         {/* Zoom Overlay */}
         {isZoomed && (
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             onClick={() => setIsZoomed(false)}
           >

@@ -22,7 +22,7 @@ export default function FeaturedProducts() {
             ХИТЫ ПРОДАЖ
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Самые востребованные кроссовки, которые выбирают наши клиенты. 
+            Самые востребованные кроссовки, которые выбирают наши клиенты.
             Ограниченные коллекции от топовых брендов.
           </p>
         </div>
@@ -30,12 +30,12 @@ export default function FeaturedProducts() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProducts.map((product, index) => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="transform hover:scale-105 transition-transform duration-300"
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
+                animation: "fadeInUp 0.6s ease-out forwards",
               }}
             >
               <ProductCard product={product} />
@@ -46,7 +46,10 @@ export default function FeaturedProducts() {
         {/* CTA Button */}
         <div className="text-center">
           <Link href="/catalog">
-            <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg group">
+            <Button
+              size="lg"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg group"
+            >
               Смотреть все товары
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -70,4 +73,3 @@ export default function FeaturedProducts() {
     </section>
   );
 }
-

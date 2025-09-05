@@ -43,7 +43,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                   {product.currency} {product.price.toLocaleString()}
                 </span>
                 <span className="text-sm text-gray-400 line-through">
-                  from {product.currency} {product.originalPrice.toLocaleString()}
+                  from {product.currency}{" "}
+                  {product.originalPrice.toLocaleString()}
                 </span>
               </>
             ) : (

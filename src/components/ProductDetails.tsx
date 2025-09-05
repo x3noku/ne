@@ -52,7 +52,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               <ArrowLeft className="w-4 h-4" />
               Назад
             </Button>
-            
+
             <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
@@ -60,7 +60,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                 onClick={() => setIsFavorite(!isFavorite)}
                 className={`${isFavorite ? "text-red-500" : "text-gray-500"}`}
               >
-                <Heart className={`w-4 h-4 ${isFavorite ? "fill-current" : ""}`} />
+                <Heart
+                  className={`w-4 h-4 ${isFavorite ? "fill-current" : ""}`}
+                />
               </Button>
               <Button variant="ghost" size="sm">
                 <Share2 className="w-4 h-4" />
@@ -75,15 +77,15 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Image Gallery */}
           <div className="space-y-4">
-            <ImageGallery 
-              images={product.images || [product.image]} 
+            <ImageGallery
+              images={product.images || [product.image]}
               productName={product.name}
             />
           </div>
 
           {/* Product Info */}
           <div className="space-y-6">
-            <ProductInfo 
+            <ProductInfo
               product={product}
               selectedSize={selectedSize}
               selectedColor={selectedColor}
